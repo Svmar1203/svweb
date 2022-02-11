@@ -130,15 +130,15 @@ html {
 }
 
 .circle-1 {
-  background: url(images/);
+  background: url(images/85.jpg) center no-repeat;
 }
 
 .main-circle {
-  width: 75rem;
-  height: 75rem;
+  width: 70rem;
+  height: 70rem;
   position: absolute;
   overflow: hidden;
-  border-radius: 90%;
+  border-radius: 50%;
 }
 
 .main-circle img {
