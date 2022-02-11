@@ -148,6 +148,7 @@ html {
   background-size: cover;
   background-clip: content-box;
   border: 1rem double #887f7f;
+  opacity: 0.8;
 }
 
 .circle-4 {
@@ -155,6 +156,7 @@ html {
   background-size: cover;
   background-clip: content-box;
   border: 0.7rem double #6b4646;
+  opacity: 0.7;
 }
 
 .main-circle {
@@ -167,4 +169,24 @@ html {
 
 .main-circle img {
   mix-blend-mode: multiply;
+}
+
+.featured-text {
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgb(8, 1, 1);
+  text-transform: uppercase;
+  width: 0;
+  word-wrap: break-word;
+  line-height: 1.5;
+  position: sticky;
+  top: 0;
+}
+
+.featured-text-1 {
+  margin: 0 auto 0 10rem;
+}
+
+.featured-text-2 {
+  margin: 0 10rem 0 auto;
 }
