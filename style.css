@@ -131,6 +131,30 @@ html {
 
 .circle-1 {
   background: url(images/85.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem dotted #584b4b;
+}
+
+.circle-2 {
+  background: url(images/241.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem dashed #704e4e;
+}
+
+.circle-3 {
+  background: url(images/4.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 1rem double #887f7f;
+}
+
+.circle-4 {
+  background: url(images/8.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.7rem double #6b4646;
 }
 
 .main-circle {
