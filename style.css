@@ -127,6 +127,7 @@ html {
   background-color: #c0b8b8;
   align-self: center;
   justify-self: center;
+  position: relative;
 }
 
 .circle-1 {

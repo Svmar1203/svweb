@@ -11,7 +11,18 @@ const mainImg = document.querySelector(".main-circle img");
 
 let mX = 0;
 let mY = 0;
+
 const animateCircles = (e, x, y) => {
+  if (x < mX) {
+    circles.forEach((circle) => {
+      circle.style.left = "100px";
+    });
+  }
+
+  if (y < mY) {
+    console.log("move upwards");
+  }
+
   mX = e.clientX;
   mY = e.clientY;
 };
@@ -21,6 +32,7 @@ document.body.addEventListener("mousemove", (e) => {
   let y = e.clientY;
 
   mouseCircleFn(x, y);
+  animateCircles(e, x, y);
 });
 
 document.body.addEventListener("mouseleave", () => {
