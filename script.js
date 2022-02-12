@@ -17,10 +17,24 @@ const animateCircles = (e, x, y) => {
     circles.forEach((circle) => {
       circle.style.left = "100px";
     });
+    mainImg.style.left = "100px";
+  } else if (x > mX) {
+    circles.forEach((circle) => {
+      circle.style.left = "-100px";
+    });
+    mainImg.style.left = "-100px";
   }
 
   if (y < mY) {
-    console.log("move upwards");
+    circles.forEach((circle) => {
+      circle.style.top = "100px";
+    });
+    mainImg.style.top = "100px";
+  } else if (y > mY) {
+    circles.forEach((circle) => {
+      circle.style.top = "-100px";
+    });
+    mainImg.style.top = "-100px";
   }
 
   mX = e.clientX;

@@ -170,6 +170,7 @@ html {
 
 .main-circle img {
   mix-blend-mode: multiply;
+  position: relative;
 }
 
 .featured-text {
