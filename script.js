@@ -11,30 +11,31 @@ const mainImg = document.querySelector(".main-circle img");
 
 let mX = 0;
 let mY = 0;
+const z = 80;
 
 const animateCircles = (e, x, y) => {
   if (x < mX) {
     circles.forEach((circle) => {
-      circle.style.left = "100px";
+      circle.style.left = `${z}px`;
     });
-    mainImg.style.left = "100px";
+    mainImg.style.left = `${z}px`;
   } else if (x > mX) {
     circles.forEach((circle) => {
-      circle.style.left = "-100px";
+      circle.style.left = `-${z}px`;
     });
-    mainImg.style.left = "-100px";
+    mainImg.style.left = `-${z}px`;
   }
 
   if (y < mY) {
     circles.forEach((circle) => {
-      circle.style.top = "100px";
+      circle.style.top = `${z}px`;
     });
-    mainImg.style.top = "100px";
+    mainImg.style.top = `${z}px`;
   } else if (y > mY) {
     circles.forEach((circle) => {
-      circle.style.top = "-100px";
+      circle.style.top = `-${z}px`;
     });
-    mainImg.style.top = "-100px";
+    mainImg.style.top = `-${z}px`;
   }
 
   mX = e.clientX;
