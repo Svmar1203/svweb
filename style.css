@@ -296,3 +296,18 @@ html {
   position: relative;
   padding: 10rem 10rem 15rem 10rem;
 }
+
+.about-me-text {
+  width: 80%;
+  margin: auto;
+}
+
+.about-me-text span {
+  font-family: "Poppins", sans-serif;
+  font-size: 10rem;
+  font-weight: bold;
+  color: #6b4646;
+  letter-spacing: 0.5rem;
+  line-height: 0.9;
+  text-shadow: 0 0 1rem #c8c5c5;
+}
