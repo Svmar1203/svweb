@@ -73,3 +73,12 @@ mainBtn.addEventListener("mouseenter", (e) => {
 mainBtn.addEventListener("mouseleave", () => {
   mainBtn.removeChild(ripple);
 });
+
+const aboutMeText = document.querySelector(".about-me-text");
+const aboutMeTextContent = `For now it's just me, Svetlana Martseva. Welcome to my mini portfolio website! I am a web developer. Striving to become great at her job. I am a person who has high passion in learning new stuff. I enjoy each new project as I get it. Feel free to have a look at my portfolio and don't hesitate to contact me if you think I can be at service to you. Thanks for stopping by!`;
+
+Array.from(aboutMeTextContent).forEach((char) => {
+  const span = document.createElement("span");
+  span.textContent = char;
+  aboutMeText.appendChild(span);
+});

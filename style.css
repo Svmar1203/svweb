@@ -169,8 +169,8 @@ html {
 }
 
 .main-circle {
-  width: 60rem;
-  height: 60rem;
+  width: 70rem;
+  height: 70rem;
   position: absolute;
   overflow: hidden;
   border-radius: 50%;
@@ -178,8 +178,8 @@ html {
 }
 
 .main-circle:hover {
-  width: 75rem;
-  height: 75rem;
+  width: 80rem;
+  height: 80rem;
 }
 
 .main-circle img {
@@ -228,6 +228,13 @@ html {
   border: 0.2rem dotted #993333;
   border-radius: 50%;
   transform: rotate(40deg);
+  transition: transform 0.2s, border 0.2s;
+}
+
+.main-btn:hover .main-btn-content {
+  transform: rotate(60deg);
+  border: 0.2rem dotted #993333;
+  transition: transform 0.2s 0.5s, border 0.2s;
 }
 
 .main-btn-line {
@@ -283,4 +290,9 @@ html {
     width: 210%;
     height: 210%;
   }
+}
+
+.section-2 {
+  position: relative;
+  padding: 10rem 10rem 15rem 10rem;
 }
