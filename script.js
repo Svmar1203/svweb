@@ -55,30 +55,36 @@ document.body.addEventListener("mouseleave", () => {
   mouseDot.style.opacity = "0";
 });
 
-const mainBtn = document.querySelector(".main-btn");
+const mainBtns = document.querySelectorAll(".main-btn");
 
-let ripple;
+mainBtns.forEach((btn) => {
+  let ripple;
 
-mainBtn.addEventListener("mouseenter", (e) => {
-  const left = e.clientX - e.target.getBoundingClientRect().left;
-  const top = e.clientY - e.target.getBoundingClientRect().top;
+  btn.addEventListener("mouseenter", (e) => {
+    const left = e.clientX - e.target.getBoundingClientRect().left;
+    const top = e.clientY - e.target.getBoundingClientRect().top;
 
-  ripple = document.createElement("div");
-  ripple.classList.add("ripple");
-  ripple.style.left = `${left}px`;
-  ripple.style.top = `${top}px`;
-  mainBtn.prepend(ripple);
-});
+    ripple = document.createElement("div");
+    ripple.classList.add("ripple");
+    ripple.style.left = `${left}px`;
+    ripple.style.top = `${top}px`;
+    btn.prepend(ripple);
+  });
 
-mainBtn.addEventListener("mouseleave", () => {
-  mainBtn.removeChild(ripple);
+  btn.addEventListener("mouseleave", () => {
+    btn.removeChild(ripple);
+  });
 });
 
 const aboutMeText = document.querySelector(".about-me-text");
-const aboutMeTextContent = `For now it's just me, Svetlana Martseva. Welcome to my mini portfolio website! I am a web developer. Striving to become great at her job. I enjoy each new project as I get it. Feel free to have a look at my portfolio and don't hesitate to contact me if you think I can be at service to you. Thanks for stopping by!`;
+const aboutMeTextContent = `For now it's just me, Svetlana. I am a web developer. Striving to become great at her job. I enjoy each new project as I get it. Feel free to have a look at my portfolio and don't hesitate to contact me if you think I can be at service to you. Thanks for stopping by!`;
 
 Array.from(aboutMeTextContent).forEach((char) => {
   const span = document.createElement("span");
   span.textContent = char;
   aboutMeText.appendChild(span);
+
+  span.addEventListener("mouseenter", (e) => {
+    e.target.style.animation = "aboutMeTextAnim 10s infinite";
+  });
 });
