@@ -361,3 +361,24 @@ html {
   flex-wrap: wrap;
   padding-bottom: 15rem;
 }
+
+.project {
+  width: 40rem;
+  height: 30rem;
+  overflow: hidden;
+  margin: 5rem;
+  background-color: rgb(139, 99, 99);
+  position: relative;
+  border: 0.2rem dotted #352e2e;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  /*display: flex;*/
+  /*justify-content: center;*/
+}
+
+.project img {
+  width: 100%;
+  position: absolute;
+  top: 2rem;
+  /*object-fit: cover;*/
+}
