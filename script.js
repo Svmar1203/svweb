@@ -89,7 +89,9 @@ Array.from(aboutMeTextContent).forEach((char) => {
   });
 });
 
+const container = document.querySelector(".container");
 const projects = document.querySelectorAll(".project");
+
 projects.forEach((project) => {
   project.addEventListener("mouseenter", () => {
     project.firstElementChild.style.top = `-${
@@ -100,4 +102,12 @@ projects.forEach((project) => {
   project.addEventListener("mouseleave", () => {
     project.firstElementChild.style.top = "2rem";
   });
+
+  //Big Project Image
+  project.addEventListener("click", () => {
+    const bigImgWrapper = document.createElement("div");
+    bigImgWrapper.className = "project-img-wrapper";
+    container.appendChild(bigImgWrapper);
+  });
+  //End of Big Project Image
 });
