@@ -108,6 +108,12 @@ projects.forEach((project) => {
     const bigImgWrapper = document.createElement("div");
     bigImgWrapper.className = "project-img-wrapper";
     container.appendChild(bigImgWrapper);
+
+    const bigImg = document.createElement("img");
+    bigImg.className = "project-img";
+    const imgPath = project.firstElementChild.getAttribute("src").split(".")[0];
+    bigImg.setAttribute("src", `${imgPath}-big.png`);
+    bigImgWrapper.appendChild(bigImg);
   });
   //End of Big Project Image
 });
