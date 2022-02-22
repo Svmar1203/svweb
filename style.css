@@ -445,3 +445,21 @@ html {
     height: 100%;
   }
 }
+
+.project-img {
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 7rem 20rem;
+  opacity: 0.9;
+  transform-origin: top center;
+  animation: imgAnim 1s 1s both;
+}
+
+@keyframes imgAnim {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
