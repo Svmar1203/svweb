@@ -93,7 +93,7 @@ const container = document.querySelector(".container");
 const projects = document.querySelectorAll(".project");
 const projectHideBtn = document.querySelector(".project-hide-btn");
 
-projects.forEach((project) => {
+projects.forEach((project, i) => {
   project.addEventListener("mouseenter", () => {
     project.firstElementChild.style.top = `-${
       project.firstElementChild.offsetHeight - project.offsetHeight + 20
@@ -126,4 +126,6 @@ projects.forEach((project) => {
     };
   });
   //End of Big Project Image
+
+  i >= 6 && (project.style.cssText = "display: none; opacity: 0");
 });

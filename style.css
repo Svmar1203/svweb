@@ -484,3 +484,8 @@ html {
   visibility: visible;
   transition: transform 0.5s;
 }
+
+.projects-btn {
+  left: 50%;
+  transform: translateX(-50%);
+}
