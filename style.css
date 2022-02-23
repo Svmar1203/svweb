@@ -463,3 +463,24 @@ html {
     transform: scale(1);
   }
 }
+
+.project-hide-btn {
+  position: fixed;
+  top: 5rem;
+  right: 5rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  z-index: 10;
+  transform: scale(0);
+  visibility: hidden;
+}
+
+.change.project-hide-btn {
+  transform: scale(1);
+  visibility: visible;
+  transition: transform 0.5s;
+}
