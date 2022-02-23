@@ -129,3 +129,24 @@ projects.forEach((project, i) => {
 
   i >= 6 && (project.style.cssText = "display: none; opacity: 0");
 });
+
+const projectsBtn = document.querySelector(".projects-btn");
+const projectsBtnText = document.querySelector(".projects-btn span");
+let showHideBool = true;
+
+projectsBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  projects.forEach((project, i) => {
+    if (i >= 6) {
+      if (showHideBool) {
+        project.style.display = "flex";
+        project.style.opacity = "1";
+      } else {
+        project.style.display = "none";
+        project.style.opacity = "0";
+      }
+    }
+  });
+  showHideBool = !showHideBool;
+});
