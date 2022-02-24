@@ -130,6 +130,7 @@ projects.forEach((project, i) => {
   i >= 6 && (project.style.cssText = "display: none; opacity: 0");
 });
 
+const section3 = document.querySelector(".section-3");
 const projectsBtn = document.querySelector(".projects-btn");
 const projectsBtnText = document.querySelector(".projects-btn span");
 let showHideBool = true;
@@ -137,14 +138,25 @@ let showHideBool = true;
 projectsBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
+  projectsBtn.firstElementChild.nextElementSibling.classList.toggle("change");
+
   projects.forEach((project, i) => {
     if (i >= 6) {
       if (showHideBool) {
-        project.style.display = "flex";
-        project.style.opacity = "1";
+        setTimeout(() => {
+          project.style.display = "flex";
+          section3.scrollIntoView({ block: "end" });
+        }, 400);
+        setTimeout(() => {
+          project.style.opacity = "1";
+        }, i * 200);
+
+        projectsBtnText.textContent = "Show Less";
       } else {
         project.style.display = "none";
         project.style.opacity = "0";
+
+        projectsBtnText.textContent = "Show More";
       }
     }
   });
