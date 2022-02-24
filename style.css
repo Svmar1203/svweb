@@ -105,6 +105,20 @@ html {
   }
 }
 
+.section-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #e9e6e6;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 10rem;
+  transform: translateY(-50%);
+  width: 0;
+  word-break: break-all;
+  line-height: 4;
+}
+
 /*Mouse Circle*/
 .mouse-circle,
 .mouse-dot {
@@ -296,20 +310,6 @@ html {
 .section-2 {
   position: relative;
   padding: 10rem 10rem 15rem 10rem;
-}
-
-.section-2-heading {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #241616;
-  text-transform: uppercase;
-  position: absolute;
-  top: 50%;
-  left: 10rem;
-  transform: translateY(-50%);
-  width: 0;
-  word-break: break-all;
-  line-height: 4;
 }
 
 .about-me-text {
@@ -508,4 +508,20 @@ html {
   transform: rotateZ(90deg) translateX(-0.5rem);
   border-left: 0.1rem solid #fff;
   border-right: none;
+}
+
+.section-4 {
+  position: relative;
+  width: 100%;
+}
+
+.services-wrapper {
+  width: 100%;
+  flex-direction: column;
+}
+
+.service {
+  width: 70%;
+  margin: 2rem 0;
+  border-bottom: 0.5rem solid #533737;
 }
