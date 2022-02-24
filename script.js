@@ -172,3 +172,12 @@ projectsBtn.addEventListener("click", (e) => {
 
   showHideBool = !showHideBool;
 });
+
+document.querySelectorAll(".service-btn").forEach((service) => {
+  service.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const serviceText = service.nextElementSibling;
+    serviceText.classList.toggle("change");
+  });
+});
