@@ -541,6 +541,7 @@ html {
   color: #3f2828;
   position: absolute;
   right: 0;
+  transition: right 0.5s;
 }
 
 .service-text {
