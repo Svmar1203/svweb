@@ -564,6 +564,7 @@ html {
 .section-5 {
   position: relative;
   height: 100vh;
+  flex-direction: column;
 }
 
 .form-heading {
@@ -573,6 +574,7 @@ html {
   color: #582525;
   letter-spacing: 0.3rem;
   margin-bottom: 3rem;
+  transition: opacity 0.3s;
 }
 
 .contact-form {
@@ -605,4 +607,20 @@ html {
   align-self: flex-start;
   font-size: 1.8rem;
   color: #fff;
+}
+
+.slideshow {
+  display: flex;
+  width: 50rem;
+  margin-top: 10rem;
+  padding: 0 2rem;
+}
+
+.slideshow-link {
+  width: 20%;
+}
+
+.slideshow-link img {
+  width: 100%;
+  padding: 0 1rem;
 }
