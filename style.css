@@ -594,4 +594,15 @@ html {
 
 .contact-form-textarea {
   height: 20rem;
+  resize: none;
+}
+
+.form-submit-btn {
+  width: 20rem;
+  height: 5rem;
+  background-color: #694343;
+  border: none;
+  align-self: flex-start;
+  font-size: 1.8rem;
+  color: #fff;
 }

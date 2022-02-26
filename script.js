@@ -187,3 +187,11 @@ document.querySelectorAll(".service-btn").forEach((service) => {
     service.firstElementChild.style.right = rightPosition;
   });
 });
+
+const formHeading = document.querySelector(".form-heading");
+const formInputs = document.querySelectorAll(".contact-form-input");
+formInputs.forEach((input) => {
+  input.addEventListener("focus", () => {
+    formHeading.textContent = `Your ${input.placeholder}`;
+  });
+});
