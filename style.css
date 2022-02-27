@@ -192,6 +192,23 @@ html {
   background-size: cover;
 }
 
+.navbar {
+  position: fixed;
+  top: 2.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3rem;
+}
+
+.navbar-link {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 2.5rem;
+}
+
 .section-1 {
   position: relative;
   width: 100%;
@@ -619,10 +636,15 @@ html {
 .slideshow-link {
   width: 20%;
   filter: brightness(0.5);
+  transition: filter 1.5s;
 }
 
 .slideshow-link:nth-child(1) .slideshow-link:nth-child(2) {
   transition: width 0.5s, opacity 0.5s;
+}
+
+.slideshow-link:nth-child(2) {
+  transition: filter 0.5s;
 }
 
 .slideshow-link img {

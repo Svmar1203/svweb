@@ -215,6 +215,7 @@ setInterval(() => {
 
   const secondIcon = slideshow.children[2];
   secondIcon.classList.add("light");
+  secondIcon.previousElementSibling.classList.remove("light");
 
   setTimeout(() => {
     slideshow.removeChild(firstIcon);
