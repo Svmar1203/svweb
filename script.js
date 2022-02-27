@@ -76,6 +76,14 @@ mainBtns.forEach((btn) => {
   });
 });
 
+const menuIcon = document.querySelector(".menu-icon");
+const navbar = document.querySelector(".navbar");
+
+document.addEventListener("scroll", () => {
+  menuIcon.classList.add("show-menu-icon");
+  navbar.classList.add("hide-navbar");
+});
+
 const aboutMeText = document.querySelector(".about-me-text");
 const aboutMeTextContent = `For now it's just me, Svetlana. I am a web developer. Striving to become great at her job. I enjoy each new project as I get it. Feel free to have a look at my portfolio and don't hesitate to contact me if you think I can be at service to you. Thanks for stopping by!`;
 
