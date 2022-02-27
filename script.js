@@ -213,6 +213,9 @@ setInterval(() => {
 
   firstIcon.classList.add("faded-out");
 
+  const secondIcon = slideshow.children[2];
+  secondIcon.classList.add("light");
+
   setTimeout(() => {
     slideshow.removeChild(firstIcon);
 
