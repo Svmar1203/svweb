@@ -211,5 +211,15 @@ const slideshow = document.querySelector(".slideshow");
 setInterval(() => {
   const firstIcon = slideshow.firstElementChild;
 
-  slideshow.removeChild(firstIcon);
+  firstIcon.classList.add("faded-out");
+
+  setTimeout(() => {
+    slideshow.removeChild(firstIcon);
+
+    slideshow.appendChild(firstIcon);
+
+    setTimeout(() => {
+      firstIcon.classList.remove("faded-out");
+    }, 500);
+  }, 500);
 }, 3000);
