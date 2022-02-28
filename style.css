@@ -192,6 +192,16 @@ html {
   background-size: cover;
 }
 
+.progress-bar {
+  position: fixed;
+  bottom: 8rem;
+  right: 8rem;
+  width: 8rem;
+  height: 8rem;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
 .menu-icon {
   position: fixed;
   top: 0;
@@ -227,6 +237,7 @@ html {
   justify-content: flex-end;
   padding-right: 3rem;
   transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
+  z-index: 100;
 }
 
 .navbar-link {
@@ -235,7 +246,6 @@ html {
   text-transform: uppercase;
   color: #fff;
   margin: 0 2.5rem;
-  z-index: 100;
   text-shadow: 0 0.3rem 0.5rem #000;
 }
 
