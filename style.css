@@ -200,6 +200,48 @@ html {
   height: 8rem;
   background-color: #fff;
   border-radius: 50%;
+  z-index: 200;
+}
+
+.half-circle,
+.half-circle-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.half-circle:nth-child(1) {
+  background-color: green;
+}
+
+.half-circle:nth-child(2) {
+  background-color: blue;
+}
+
+.half-circle-top {
+  background-color: orange;
+}
+
+.progress-bar:hover .half-circle:nth-child(1) {
+  transform: rotate(180deg);
+  transition: transform 1s linear;
+}
+
+.progress-bar:hover .half-circle:nth-child(2) {
+  transform: rotate(360deg);
+  transition: transform 2s linear;
+}
+
+.progress-bar-circle {
+  width: 7.8rem;
+  height: 7.8rem;
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 4rem;
+  display: none;
 }
 
 .menu-icon {
