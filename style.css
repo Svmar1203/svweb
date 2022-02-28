@@ -201,6 +201,7 @@ html {
   background-color: #fff;
   border-radius: 50%;
   z-index: 200;
+  overflow: hidden;
 }
 
 .half-circle,
@@ -210,18 +211,24 @@ html {
   left: 0;
   width: 50%;
   height: 100%;
+  transform-origin: right center;
 }
 
 .half-circle:nth-child(1) {
-  background-color: green;
+  background-color: red;
 }
 
 .half-circle:nth-child(2) {
-  background-color: blue;
+  background-color: red;
 }
 
 .half-circle-top {
-  background-color: orange;
+  background-color: #fff;
+}
+
+.progress-bar:hover .half-circle-top {
+  opacity: 0;
+  transition: opacity 0s 1s;
 }
 
 .progress-bar:hover .half-circle:nth-child(1) {
@@ -237,11 +244,11 @@ html {
 .progress-bar-circle {
   width: 7.8rem;
   height: 7.8rem;
-  background-color: #000;
+  background-color: rgb(128, 115, 115);
   border-radius: 50%;
-  color: #fff;
+  color: rgb(97, 31, 31);
   font-size: 4rem;
-  display: none;
+  z-index: 200;
 }
 
 .menu-icon {
