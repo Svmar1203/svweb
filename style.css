@@ -201,6 +201,8 @@ html {
   flex-direction: column;
   opacity: 0;
   visibility: hidden;
+  z-index: 100;
+  cursor: pointer;
   transition: opacity 0.2s;
 }
 
@@ -224,7 +226,7 @@ html {
   display: flex;
   justify-content: flex-end;
   padding-right: 3rem;
-  transition: opacity 0.5s, visibility 0.5s;
+  transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
 }
 
 .navbar-link {
@@ -240,6 +242,7 @@ html {
 .hide-navbar {
   opacity: 0;
   visibility: hidden;
+  transform: translateX(10rem);
 }
 
 .section-1 {
