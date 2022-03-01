@@ -76,6 +76,8 @@ mainBtns.forEach((btn) => {
   });
 });
 
+const sections = document.querySelectorAll("section");
+const progressBar = document.querySelector(".progress-bar");
 const halfCircles = document.querySelectorAll(".half-circle");
 const halfCircleTop = document.querySelector(".half-circle-top");
 const progressBarCircle = document.querySelector(".progress-bar-circle");
@@ -90,8 +92,26 @@ const progressBarFn = () => {
 
   halfCircles.forEach((el) => {
     el.style.transform = `rotate(${scrolledPortionDegree}deg)`;
+
+    if (scrolledPortionDegree >= 180) {
+      halfCircles[0].style.transform = "rotate(180deg)";
+      halfCircleTop.style.opacity = "0";
+    } else {
+      halfCircleTop.style.opacity = "1";
+    }
   });
+
+  progressBar.onclick = (e) => {
+    e.preventDefault();
+
+    const sectionPositions = Array.from(sections).map(
+      (section) => scrolledPortion + section.getBoundingClientRect().top
+    );
+    window.scrollTo(0, 3210);
+  };
 };
+
+progressBarFn();
 
 const menuIcon = document.querySelector(".menu-icon");
 const navbar = document.querySelector(".navbar");
