@@ -83,10 +83,14 @@ const progressBarCircle = document.querySelector(".progress-bar-circle");
 const progressBarFn = () => {
   const pageViewportHeight = window.innerHeight;
   const pageHeight = document.documentElement.scrollHeight;
-  const scrollPortion = window.pageYOffset;
+  const scrolledPortion = window.pageYOffset;
 
-  const scrollPortionDegree =
+  const scrolledPortionDegree =
     (scrolledPortion / (pageHeight - pageViewportHeight)) * 360;
+
+  halfCircles.forEach((el) => {
+    el.style.transform = `rotate(${scrolledPortionDegree}deg)`;
+  });
 };
 
 const menuIcon = document.querySelector(".menu-icon");
