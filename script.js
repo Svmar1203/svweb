@@ -101,14 +101,26 @@ const progressBarFn = () => {
     }
   });
 
+  const scrollBool = scrolledPortion + pageViewportHeight === pageHeight;
+
   progressBar.onclick = (e) => {
     e.preventDefault();
 
     const sectionPositions = Array.from(sections).map(
       (section) => scrolledPortion + section.getBoundingClientRect().top
     );
-    window.scrollTo(0, 3210);
+
+    const position = sectionPositions.find((sectionPosition) => {
+      return sectionPosition > scrolledPortion;
+    });
+    scrollBool ? window.scrollTo(0, 0) : window.scrollTo(0, position);
   };
+
+  if (scrollBool) {
+    progressBarCircle.style.transform = "rotate(180deg)";
+  } else {
+    progressBarCircle.style.transform = "rotate(0)";
+  }
 };
 
 progressBarFn();
