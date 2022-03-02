@@ -42,12 +42,25 @@ const animateCircles = (e, x, y) => {
   mY = e.clientY;
 };
 
+let hoveredElPosition = [];
+
 document.body.addEventListener("mousemove", (e) => {
   let x = e.clientX;
   let y = e.clientY;
 
   mouseCircleFn(x, y);
   animateCircles(e, x, y);
+
+  //Sticky Element
+  const hoveredEl = document.elementFromPoint(x, y);
+
+  if (hoveredEl.classList.contains("sticky")) {
+    if (hoveredElPosition.length < 1) {
+      hoveredElPosition = [hoveredEl.offsetTop, hoveredEl.offsetLeft];
+    }
+    hoveredEl.style.cssText = `top:${y}px; left:${x}px`;
+  }
+  //End of Sticky Element
 });
 
 document.body.addEventListener("mouseleave", () => {
