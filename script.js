@@ -114,15 +114,21 @@ const progressBarFn = (bigImgWrapper = false) => {
   progressBar.onclick = (e) => {
     e.preventDefault();
 
-    const sectionPositions = Array.from(sections).map(
-      (section) => scrolledPortion + section.getBoundingClientRect().top
-    );
+    if (!bigImgWrapper) {
+      const sectionPositions = Array.from(sections).map(
+        (section) => scrolledPortion + section.getBoundingClientRect().top
+      );
 
-    const position = sectionPositions.find((sectionPosition) => {
-      return sectionPosition > scrolledPortion;
-    });
+      const position = sectionPositions.find((sectionPosition) => {
+        return sectionPosition > scrolledPortion;
+      });
 
-    scrollBool ? window.scrollTo(0, 0) : window.scrollTo(0, position);
+      scrollBool ? window.scrollTo(0, 0) : window.scrollTo(0, position);
+    } else {
+      scrollBool
+        ? bigImgWrapper.scrollTo(0, 0)
+        : bigImgWrapper.scrollTo(0, bigImgWrapper.scrollHeight);
+    }
   };
 
   if (scrollBool) {
@@ -197,12 +203,18 @@ projects.forEach((project, i) => {
 
     progressBarFn(bigImgWrapper);
 
+    bigImgWrapper.onscroll = () => {
+      progressBarFn(bigImgWrapper);
+    };
+
     projectHideBtn.classList.add("change");
 
     projectHideBtn.onclick = () => {
       projectHideBtn.classList.remove("change");
       bigImgWrapper.remove();
       document.body.style.overflowY = "scroll";
+
+      progressBarFn();
     };
   });
   //End of Big Project Image
