@@ -82,10 +82,18 @@ const halfCircles = document.querySelectorAll(".half-circle");
 const halfCircleTop = document.querySelector(".half-circle-top");
 const progressBarCircle = document.querySelector(".progress-bar-circle");
 
-const progressBarFn = () => {
+const progressBarFn = (bigImgWrapper = false) => {
+  let pageHeight = 0;
+  let scrolledPortion = 0;
   const pageViewportHeight = window.innerHeight;
-  const pageHeight = document.documentElement.scrollHeight;
-  const scrolledPortion = window.pageYOffset;
+
+  if (!bigImgWrapper) {
+    pageHeight = document.documentElement.scrollHeight;
+    scrolledPortion = window.pageYOffset;
+  } else {
+    pageHeight = bigImgWrapper.firstElementChild.scrollHeight;
+    scrolledPortion = bigImgWrapper.scrollTop;
+  }
 
   const scrolledPortionDegree =
     (scrolledPortion / (pageHeight - pageViewportHeight)) * 360;
@@ -113,6 +121,7 @@ const progressBarFn = () => {
     const position = sectionPositions.find((sectionPosition) => {
       return sectionPosition > scrolledPortion;
     });
+
     scrollBool ? window.scrollTo(0, 0) : window.scrollTo(0, position);
   };
 
@@ -185,6 +194,8 @@ projects.forEach((project, i) => {
     bigImg.setAttribute("src", `${imgPath}-big.png`);
     bigImgWrapper.appendChild(bigImg);
     document.body.style.overflowY = "hidden";
+
+    progressBarFn(bigImgWrapper);
 
     projectHideBtn.classList.add("change");
 
