@@ -70,6 +70,10 @@ const stickyElement = (x, y, hoveredEl) => {
   //End of Sticky Element
 };
 
+// Mouse Circle Transform
+const mouseCircleTransform = (hoveredEl) => {};
+// End of Mouse Circle Transform
+
 document.body.addEventListener("mousemove", (e) => {
   let x = e.clientX;
   let y = e.clientY;
