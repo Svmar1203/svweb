@@ -44,20 +44,12 @@ const animateCircles = (e, x, y) => {
 
 let hoveredElPosition = [];
 
-document.body.addEventListener("mousemove", (e) => {
-  let x = e.clientX;
-  let y = e.clientY;
-
-  mouseCircleFn(x, y);
-  animateCircles(e, x, y);
-
-  //Sticky Element
-  const hoveredEl = document.elementFromPoint(x, y);
-
+const stickyElement = (x, y, hoveredEl) => {
+  //Stycky Element
   if (hoveredEl.classList.contains("sticky")) {
-    if (hoveredElPosition.length < 1) {
-      hoveredElPosition = [hoveredEl.offsetTop, hoveredEl.offsetLeft];
-    }
+    hoveredElPosition.length < 1 &&
+      (hoveredElPosition = [hoveredEl.offsetTop, hoveredEl.offsetLeft]);
+
     hoveredEl.style.cssText = `top:${y}px; left:${x}px`;
 
     if (
@@ -69,8 +61,24 @@ document.body.addEventListener("mousemove", (e) => {
       hoveredEl.style.cssText = "";
       hoveredElPosition = [];
     }
+
+    hoveredEl.onmouseleave = () => {
+      hoveredEl.style.cssText = "";
+      hoveredElPosition = [];
+    };
   }
   //End of Sticky Element
+};
+
+document.body.addEventListener("mousemove", (e) => {
+  let x = e.clientX;
+  let y = e.clientY;
+
+  mouseCircleFn(x, y);
+  animateCircles(e, x, y);
+
+  const hoveredEl = document.elementFromPoint(x, y);
+  stickyElement(x, y, hoveredEl);
 });
 
 document.body.addEventListener("mouseleave", () => {
