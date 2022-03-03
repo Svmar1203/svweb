@@ -194,14 +194,15 @@ html {
 
 .progress-bar {
   position: fixed;
-  bottom: 8rem;
-  right: 8rem;
+  bottom: 4rem;
+  right: 4rem;
   width: 8rem;
   height: 8rem;
   background-color: #fff;
   border-radius: 50%;
   z-index: 200;
   overflow: hidden;
+  transform: translate(-50%, -50%);
 }
 
 .half-circle,
@@ -212,6 +213,7 @@ html {
   width: 50%;
   height: 100%;
   transform-origin: right center;
+  pointer-events: none;
 }
 
 .half-circle:nth-child(1) {

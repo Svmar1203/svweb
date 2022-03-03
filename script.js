@@ -59,6 +59,16 @@ document.body.addEventListener("mousemove", (e) => {
       hoveredElPosition = [hoveredEl.offsetTop, hoveredEl.offsetLeft];
     }
     hoveredEl.style.cssText = `top:${y}px; left:${x}px`;
+
+    if (
+      hoveredEl.offsetTop <= hoveredElPosition[0] - 100 ||
+      hoveredEl.offsetTop >= hoveredElPosition[0] + 100 ||
+      hoveredEl.offsetLeft <= hoveredElPosition[1] - 100 ||
+      hoveredEl.offsetLeft >= hoveredElPosition[1] + 100
+    ) {
+      hoveredEl.style.cssText = "";
+      hoveredElPosition = [];
+    }
   }
   //End of Sticky Element
 });
