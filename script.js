@@ -71,7 +71,17 @@ const stickyElement = (x, y, hoveredEl) => {
 };
 
 // Mouse Circle Transform
-const mouseCircleTransform = (hoveredEl) => {};
+const mouseCircleTransform = (hoveredEl) => {
+  if (hoveredEl.classList.contains("pointer-enter")) {
+    hoveredEl.onmousemove = () => {
+      mouseCircle.style.cssText = `
+      width: ${hoveredEl.getBoundingClientRect().width}px;
+      height: ${hoveredEl.getBoundingClientRect().height}px;
+      top: ${hoveredEl.getBoundingClientRect().top}px;
+      left: ${hoveredEl.getBoundingClientRect().left}px;`;
+    };
+  }
+};
 // End of Mouse Circle Transform
 
 document.body.addEventListener("mousemove", (e) => {
@@ -83,6 +93,8 @@ document.body.addEventListener("mousemove", (e) => {
 
   const hoveredEl = document.elementFromPoint(x, y);
   stickyElement(x, y, hoveredEl);
+
+  mouseCircleTransform(hoveredEl);
 });
 
 document.body.addEventListener("mouseleave", () => {
