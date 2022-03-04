@@ -87,7 +87,18 @@ const mouseCircleTransform = (hoveredEl) => {
       opacity: 1;
       transform: translate(0, 0);
       animation: none;
-      border-radius: ${getComputedStyle(hoveredEl).borderRadius}`;
+      border-radius: ${getComputedStyle(hoveredEl).borderBottomLeftRadius};
+      transition: width .5s, height .5s, top .5s, left .5s, transform .5s, border-radius .5s;`;
+    };
+
+    hoveredEl.onmouseleave = () => {
+      mouseCircleBool = true;
+    };
+
+    document.onscroll = () => {
+      if (!mouseCircleBool) {
+        mouseCircle.style.top = `${hoveredEl.getBoundingClientRect().top}px`;
+      }
     };
   }
 };
