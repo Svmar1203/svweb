@@ -752,3 +752,53 @@ html {
 .light {
   filter: brightness(1.5);
 }
+
+/*Responsive*/
+@media (max-width: 1500px) {
+  .circle {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .main-circle {
+    width: 50rem;
+    height: 50rem;
+  }
+
+  .main-circle:hover {
+    width: 57rem;
+    height: 57rem;
+  }
+
+  .main-circle img {
+    width: 220%;
+    height: 150%;
+  }
+
+  .about-me-text span {
+    font-size: 11rem;
+  }
+
+  .section-4 {
+    margin-bottom: 10rem;
+  }
+
+  .service-btn span {
+    font-size: 9rem;
+  }
+
+  .service-text {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1350px) {
+  .main-btn {
+    width: 12.5rem;
+    height: 12.5rem;
+  }
+
+  .circle {
+    display: none;
+  }
+}
