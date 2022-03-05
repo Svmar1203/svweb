@@ -649,6 +649,7 @@ html {
   color: #3f2828;
   position: absolute;
   right: 0;
+  pointer-events: none;
   transition: right 0.5s;
 }
 

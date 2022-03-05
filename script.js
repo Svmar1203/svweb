@@ -276,6 +276,8 @@ projects.forEach((project, i) => {
 
     document.removeEventListener("scroll", scrollFn);
 
+    mouseCircle.style.opacity = 0;
+
     progressBarFn(bigImgWrapper);
 
     bigImgWrapper.onscroll = () => {
