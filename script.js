@@ -411,6 +411,10 @@ const error = (input, message) => {
   input.nextElementSibling.textContent = message;
 };
 
+const success = (input) => {
+  input.nextElementSibling.classList.remove("error");
+};
+
 const checkRequiredFields = (inputArr) => {
   inputArr.forEach((input) => {
     if (input.value.trim() === "") {
@@ -418,3 +422,32 @@ const checkRequiredFields = (inputArr) => {
     }
   });
 };
+
+const checkLength = (input, min) => {
+  if (input.value.trim().length < min) {
+    error(input, `${input.id} must be at least ${min} characters`);
+  } else {
+    success(input);
+  }
+};
+
+const checkEmail = (input) => {
+  const regEx =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  if (regEx.test(input.value.trim())) {
+    success(input);
+  } else {
+    error(input, "Email is not valid");
+  }
+};
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  checkLength(username, 2);
+  checkLength(subject, 2);
+  checkLength(message, 10);
+  checkEmail(email);
+  checkRequiredFields([username, email, subject, message]);
+});
