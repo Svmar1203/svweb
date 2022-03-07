@@ -724,6 +724,15 @@ html {
   color: #8a0f0f;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+  margin: 0 auto 1rem 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.error.message {
+  visibility: visible;
+  opacity: 1;
 }
 
 .slideshow {

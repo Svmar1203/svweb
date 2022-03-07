@@ -398,3 +398,23 @@ setInterval(() => {
     }, 500);
   }, 500);
 }, 3000);
+
+const form = document.querySelector(".contact-form");
+const username = document.getElementById("name");
+const email = document.getElementById("email");
+const subject = document.getElementById("subject");
+const message = document.getElementById("message");
+const messages = document.querySelectorAll(".message");
+
+const error = (input, message) => {
+  input.nextElementSibling.classList.add("error");
+  input.nextElementSibling.textContent = message;
+};
+
+const checkRequiredFields = (inputArr) => {
+  inputArr.forEach((input) => {
+    if (input.value.trim() === "") {
+      error(input, `${input.id} is required`);
+    }
+  });
+};
