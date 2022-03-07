@@ -718,6 +718,14 @@ html {
   color: #fff;
 }
 
+.message {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #8a0f0f;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
 .slideshow {
   display: flex;
   width: 50rem;
